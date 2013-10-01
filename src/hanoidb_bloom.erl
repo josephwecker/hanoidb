@@ -260,7 +260,7 @@ bloom_build(Sbf=#sbf{b=Blooms}) ->
 -ifdef(EQC).
 
 prop_bloom_test_() ->
-    {timeout, 60, fun() -> ?assert(eqc:quickcheck(prop_bloom())) end}.
+    {timeout, 60, fun() -> ?assert(triq:quickcheck(prop_bloom())) end}.
 
 g_keys() ->
     non_empty(list(non_empty(binary()))).
